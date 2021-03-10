@@ -1,63 +1,73 @@
 body{
     margin:0px;
-    background-color: rgb(100, 100, 100);
+    
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
 }
 
 .main-game {
-    height: 100vh;
-    width: 100vw;
+    height: 80vh;
+    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
+   margin:auto;
+    box-shadow: 10px 10px 10px white;
+    overflow-y: hidden;
 }
 
 .genius {
     display:grid;
     grid-template-areas:    'green red'
                             'yellow blue';
-    grid-gap:10px;
-    border:1px solid #fff;
+    grid-gap:5px;
+    border:none;
     background-color:#fff;
     border-radius:100%;
-    width:700px;
-    height: 700px;
+    width:500px;
+    height: 500px;
     margin-top: 20px;
+    transform: rotate(45deg);
+    
 }
 
 .blue {
     grid-area: blue;
     background-color: rgb(40, 11, 167);
     border-bottom-right-radius: 100%;
-    animation: azul 2s;
+    background-image: radial-gradient(rgb(19, 31, 202), rgb(16, 5, 119) );
 }
 
 .red {
     grid-area:red;
-    background-color:red;
+    background-color:rgb(102, 7, 7);
     border-top-right-radius: 100%;
+    background-image: radial-gradient(rgb(233, 22, 22), rgb(78, 9, 9) );
 }
 
 .orange {
     grid-area:rgb(240, 188, 20);
-    background-color:rgb(240, 188, 20);
+    background-color:rgb(156, 121, 4);
     border-bottom-left-radius: 100%;
+    background-image: radial-gradient(rgb(204, 137, 11), rgb(128, 98, 3) );
 }
 
 .green {
     grid-area:green;
-    background-color:green;
+    background-color:rgb(9, 102, 9);
     border-top-left-radius: 100%;
+    background-image: radial-gradient(rgb(37, 153, 47), rgb(21, 110, 9) );
 }
 
 
 .selected {
-    animation-delay: 3s;
-    
-    animation: piscar 0.15s ;
+    animation: piscar 0.7s;
     
 }
 
 @keyframes piscar {
-    from {opacity:0;}
-    to {opacity:1}
+    from { opacity:0;}
+    to {opacity:1;}
   }
