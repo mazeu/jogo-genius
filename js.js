@@ -15,28 +15,31 @@ const orange = document.querySelector('.orange');
 //cria ordem aleatoria de cores
 let shufferOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
+   
     order.push(colorOrder);
     console.log(order);
     clickedOrder = [];
 
     for(let i in order){
-        
+        //espera ulguns milisegundos para começar a piscar a cor
         setTimeout(()=>{
         let elementColor = createColorElement(order[i]);
-        lightColor(elementColor, Number(i)+1);},1300);
+        lightColor(elementColor, Number(i)+1);},1200);
         
     }
 }
 
 //acende a proxima cor
 let lightColor = (element, number) => {
-    number = number * 1000;
-    setTimeout(() => {
-        element.classList.add('selected');
-    }, number-200);
-    setTimeout(() => {
-        element.classList.remove('selected');
-    },50);
+    number = number * 400;
+
+        setTimeout(() => {
+            element.classList.add('selected');
+        }, number-250);
+
+        setTimeout(() => {
+            element.classList.remove('selected');
+        },number-450);
 }
 
 //checa se os botoes clicados sao os mesmos da ordem do jogo
@@ -56,12 +59,12 @@ let checkedOrder = () => {
 //funçao para o clique do usuario
 let click = (color) => {
     clickedOrder[clickedOrder.length] = color;
-    createColorElement(color).classList.add('selected');
+    createColorElement(color).classList.add("selected");
 
-    setTimeout(()=>{
-        createColorElement(color).classList.remove('selected');
+    setTimeout(() => {
+        createColorElement(color).classList.remove("selected");
         checkedOrder();
-    },250);   
+      }, 250);
 }
 
 //criar função que retorna a cor
